@@ -37,7 +37,9 @@ pub struct Library {
 /// Load words from a file into a vector of strings, ensuring all words have the same length.
 /// Returns (words, word_length).
 fn load_words_from_file(path: &Path) -> (Vec<String>, usize) {
-    let contents: String = fs::read_to_string(path).expect("Something went wrong reading the file");
+    let contents: String = fs::read_to_string(path).expect(
+        &format!("Something went wrong reading the file: {}", path.display())
+    );
     let words: Vec<String> = contents.lines().map(|line| line.to_string()).collect();
     let word_length = words.first().map(|w| w.len()).unwrap_or(0);
     if !words.iter().all(|w| w.len() == word_length) {
