@@ -20,3 +20,5 @@ jobs:
       run: cargo build --verbose
     - name: Run all tests
       run: cargo test --verbose -- --include-ignored
+      env:
+        RUST_BACKTRACE: 1
