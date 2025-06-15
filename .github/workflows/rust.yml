@@ -16,8 +16,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      with:
+        submodules: true
+
     - name: Build
       run: cargo build --verbose
+
     - name: Run all tests
       run: cargo test --verbose -- --include-ignored
       env:
