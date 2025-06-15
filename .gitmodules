@@ -1,0 +1,3 @@
+[submodule "tests/data"]
+	path = tests/data
+	url = https://gist.github.com/dec102adb5e60a8299857cbf78f6cf57.git
